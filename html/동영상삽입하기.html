@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>동영상 넣기</title>
+</head>
+<body>
+  <strong>비디오 태그</strong>
+  동영상 넣기
+  <video src="imgae-multimedia/media/halongbay_320.mp4"
+  >
+  <!-- img태그의 alt처럼 비디오가 정상적으로 보이지 않을 때 사용하는 요소 -->
+   <p>비디오 에러</p>
+  </video>
+  <hr>
+  <div>
+    <video 
+    src="imgae-multimedia/media/halongbay_320.mp4"
+    controls
+    muted
+    autoplay
+    loop
+    playsinline
+    >
+    </video>
+  </div>
+
+  <div>
+    <video 
+    src="imgae-multimedia/media/halongbay_320.mp4"
+    controls
+    poster="imgae-multimedia/media/halongbay_320_2_Moment.jpg"
+    >
+    </video>
+  </div>
+
+  <div>
+    <video 
+    controls
+    poster="imgae-multimedia/media/halongbay_320_2_Moment.jpg"
+    >
+    <source src="imgae-multimedia/media/halongbay_320.mp4">
+    </video>
+  </div>
+</body>
+</html>
