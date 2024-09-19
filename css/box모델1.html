@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>box모델.html</title>
+  <style>
+    /* margin -> border -> padding -> content */
+    .box {
+      background-color: #ccc;
+      /* margin: 30px; */
+      border: 1px solid #000;
+      /* padding: 20px; */
+      width: 200px;
+      height: 200px;
+    }
+
+    /* 
+    요소 수평 lm + lb + lp + w + rp + rb + rm 
+    요소 수직 tm + tb + tp + h + bp + bb + bm 
+    */
+    /* 
+    box sizing
+    h-size 292px(242px)
+    lm 40px lb 1px lp 20px w 200px rp 20px rb 1px rm 10px
+    v-size 282px(242px)
+    tm 10px tb 1px tp 20px h 200px bp 20px bb 1px bm 30px
+    */
+    .box1 {
+      margin: 10px 20px 30px 40px;
+      /* 상 우 하 좌 */
+      border: 1px solid #000;
+      padding: 20px;
+      /* 상우하좌 */
+    }
+
+    /* 
+    box sizing
+    h-size 324px(284px)
+    lm 20px lb 10px lp (2em)32px w 200px rp (2em)32px rb 10px rm 20px
+    v-size 292px(252px)
+    tm 10px tb 10px tp (1em)16px h 200px bp (1em)16px bb 10px bm 30px
+    */
+    /* em은 정확히 16px은 아니라서 계산이 다를 수 있음 */
+    .box2 {
+      margin: 10px 20px 30px;
+      /* 상 우/좌 하 */
+      border: 10px dotted #000;
+      padding: 1em 2em;
+      /* 상/하 좌우/ */
+    }
+
+    .box3 {
+      margin: 10px 20px;
+      /* 상/하 우/좌 */
+      border-top: 10px dashed #000;
+      padding: 30px 3em 10px;
+      /* 상 우/좌 하 */
+    }
+  </style>
+</head>
+
+<body>
+  <!-- div.box.box$*3>{box$} -->
+  <div class="box box1">box1</div>
+  <div class="box box2">box2</div>
+  <div class="box box3">box3</div>
+</body>
+
+</html>
