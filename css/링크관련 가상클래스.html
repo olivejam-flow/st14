@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>링크관련가상클래스.html</title>
+</head>
+
+<body>
+  <!-- ul>li*3>a>{링크} -->
+  <ul>
+    <li><a href="https://www.naver.com">링크 네이버</a></li>
+    <li><a href="https://www.google.com">링크 구글</a></li>
+    <li><a href="https://www.daum.net">링크 다음</a></li>
+  </ul>
+  <!-- p>lorem -->
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa ullam architecto reprehenderit delectus autem,
+    pariatur quia odit assumenda voluptates! Quam commodi ipsam sequi labore? Natus nisi repudiandae voluptas quasi
+    itaque!</p>
+  <style>
+    /* : 콜론은 가상선택자 */
+    a:link,
+    a:visited,
+    a:active {
+      color: rgb(114, 108, 141);
+      text-decoration: none;
+    }
+
+    a:hover,
+    a:focus {
+      color: rgb(230, 77, 136);
+      text-decoration: underline;
+      font-weight: bold;
+    }
+
+    body {
+      color: #f0f;
+    }
+  </style>
+</body>
+
+</html>

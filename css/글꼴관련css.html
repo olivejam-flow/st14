@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>글꼴관련css</title>
+  <style>
+    span.title {
+      font-weight: 600;
+    }
+
+    section {
+      background-color: #ccc;
+      color: #00f;
+      /* font-size: 100%;
+      font-size: 14px;  
+      font-size: 10.5pt;
+      font-size: 0.0875%;
+      font-size: 0.875em; */
+      /* 16px -> 1em 계산하는 방법 pxtoem.com.au */
+      font-size: 1em;
+      /* 폰트사이즈의 기본은 16px 14pt 1em 100% */
+
+      /* line-height: 100%;
+      line-height: normal; */
+      line-height: 1.4;
+      /* 폰트사이즈에 맞춰서 1.4배하겠다라는 뜻. */
+    }
+
+    span {
+      color: #f00;
+    }
+
+    .title {
+      font-weight: 200;
+    }
+
+    .section2 span {
+      color: #0f0;
+    }
+
+    body {
+      color: #f0f;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- section.section$*3>p>lorem -->
+  <section class="section1">
+    <p>Lorem <span class="title">ipsum</span> dolor sit amet consectetur adipisicing elit. Reprehenderit et quaerat
+      temporibus excepturi
+      voluptatibus? Minus possimus reprehenderit tenetur hic quos temporibus maxime ea iure laudantium corrupti. Numquam
+      unde dolore non?</p>
+  </section>
+  <section class="section2">
+    <p>Tempora <span>sequi</span> non accusamus, quia commodi ea sint nulla libero eum aspernatur! Fugit
+      architecto porro temporibus
+      culpa similique! Molestiae ipsa eligendi vitae, quidem ullam numquam maxime eveniet repellat illum ex.</p>
+  </section>
+  <section class="section3">
+    <p>Aspernatur, <span>necessitatibus</span> dolorem! Eum fugiat corrupti aut, mollitia voluptatibus
+      necessitatibus alias!
+      Cupiditate corporis, ad maxime quod magni vero nesciunt ab natus veritatis exercitationem velit eos nulla, ipsum
+      doloremque. Aliquam, fugiat!</p>
+  </section>
+
+  <!-- p>a>{글꼴을 상속받지않은 a태그} -->
+  <!-- a태그의 글자색(color)을 지정하려면 조상(부모)이 아닌 a태그 본인에게 color 지정해야한다.  -->
+  <p><a href="">글꼴을 상속받지않은 a태그</a></p>
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque aperiam eos nulla suscipit qui. Distinctio, itaque
+    repellat maiores ut, harum sunt laboriosam, enim accusamus ad consequatur necessitatibus amet. Esse, dicta.</p>
+</body>
+
+</html>

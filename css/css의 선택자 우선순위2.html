@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS의 선택자 우선순위</title>
+  <style>
+    /* color 조상한테 값 지정 후손 상속 */
+    .section {
+      color: #00f;
+      background-color: #864;
+      padding: 20px;
+    }
+
+    /* 문서 내의 모든 p를 선택 */
+    /* 스타일안에 !important 라고 쓰면 우선순위값 10000 (제일 우선순위) */
+    p {
+      background-color: #ccc !important;
+      border: 1px solid #000;
+    }
+
+    /* 동일한 요소에 동일한 CSS 속성을 지정하면
+    마지막 지정한 값이 적용 */
+    /* #section p 선택자 우선순위값 100+1 */
+    #section1 p {
+      background-color: #486;
+    }
+
+    /* .section p 선택자 우선순위값 10+1 */
+    .section p {
+      background-color: #0f0;
+    }
+
+    /* p 선택자 우선순위값 1 */
+    p {
+      background-color: #f00;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- .wrap>div.section#section$*2>div.inner>p>{section$-item$} -->
+
+  <div class="wrap">
+    <div class="section" id="section1">
+      <div class="inner">
+        <!-- 인라인스타일 우선순위값 1000 -->
+        <p style="background-color: #ff0;">section1-item1</p>
+      </div>
+    </div>
+    <div class="section" id="section2">
+      <div class="inner">
+        <p>section2-item2</p>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
