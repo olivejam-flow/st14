@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>text-shadow</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: "Noto Sans KR", sans-serif;
+    }
+
+    .wrap {
+      background-color: #636;
+      width: 100%;
+      height: 100vh;
+      text-align: center;
+      /* .wrap 자식 인라인 요소를 가운데.
+      inline-block인 수평상에 가운데(.box 가운데)로 놓고 싶어서  */
+      align-content: center;
+      /* .wrap 자식요소들을 수직상에서 가운데*/
+    }
+
+    .box {
+      display: inline-block;
+      padding: 1rem 2rem;
+      color: #fff;
+      /* background-color: rgba(119, 119, 119, 0.5); */
+      background-color: rgba(255, 255, 255, 0.1);
+
+      text-shadow: 1px 1px 1px rgba(0, 0, 0, 1);
+      box-shadow: 0px 0px 5px 2px rgba(242, 119, 119, 1);
+      /* border-radius: 10px 20px 30px 40px; */
+      /* border-radius: 10px 20px 30px; */
+      /* border-radius: 0px 50px; */
+      border-radius: 50px;
+
+      font-size: 50px;
+      font-weight: 700;
+    }
+
+    .box:hover {
+      background-color: rgba(255, 161, 145, 0.795);
+      box-shadow: 0px 0px 5px 2px rgb(56, 31, 31);
+      border-radius: 50px;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- .wrap>.box>{slogan text} -->
+  <div class="wrap">
+    <div class="box">slogan text</div>
+  </div>
+</body>
+
+</html>
