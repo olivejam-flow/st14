@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>word-break</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    .box {
+      margin: 20px auto;
+      width: 400px;
+      border: 1px solid #000;
+    }
+
+    .box1 {
+      word-break: keep-all;
+      text-align: center;
+    }
+
+    .box2 {
+      word-break: normal;
+      text-align: center;
+    }
+
+    .box3 {
+      word-break: break-all;
+      /* 영어도 단어단위 word wrap이 아니라 문자 단위로 wrap */
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box box1">얼오덩재밖에 콕앟태와 팧걍아 알녹과 저호가 갆한간뱅이다 가시에 디쓰놀 아저드가 몰오혼다 서뎠음 아올일, 싀설은 밨허게 갑잉다 다뎌다 생촌가 톰님해소저잪래쥐의 눔근디까거인은
+    민카에서</div>
+  <div class="box box2">져제품이는 자으촐시면서 범츠어 아빤히차의 헌럴 걱흐오슬이마 동모에, 논숴단은 딘하가 이옴이 느에구으에서 옹이습잔 안산기납나는 시티리앤 든래고 읬자와로 스민의 온으술께다
+    한얼과 죘데어</div>
+  <div class="box box3">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nemo rem laborum soluta harum aperiam
+    dicta ab dolor tenetur! Deserunt, facilis.</div>
+  <div class="box box4">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Est nesciunt aperiam quos assumenda
+    ratione sequi? Eos culpa facilis libero repudiandae!</div>
+</body>
+
+</html>
