@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>position 개념</title>
+  <style>
+    /* reset */
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    .wrap {
+      /* .box3의 기준요소가 되기 위해 지정 */
+      position: relative;
+      /* margin 값은 좌표값에 표함하지 않는다. */
+      margin: 50px;
+      /* padding은 absolute의 좌표에 포함됨 */
+      padding: 50px;
+      background-color: #ccc;
+    }
+
+    /* 너비는 부모로부터, 높이는 자식으로부터 */
+    .box {
+      /* box-sizing은 기본값이 content-box이다.
+      margin+boder+padding+content 사이즈로 계산되고 브라우저에서는 margin값이 계산안되서 표시됨
+      border-box라고 지정하면 컨텐츠 사이즈로 표시, 계산됨 */
+      box-sizing: content-box;
+      /* box-sizing: border-box; */
+      width: 200px;
+      height: 200px;
+      /* margin: 20px; */
+      padding: 20px;
+      border: 10px solid #000;
+
+    }
+
+    .box-p {
+      background-color: rgb(255, 255, 102, 0.2);
+    }
+
+    .box-c {
+      /* width를 따로 지정하지 않으면 width: auto;와 같다. 따라서 부모의 너비를 따라간다 */
+      height: 100px;
+      background-color: #66f;
+      position: absolute;
+      /* .box-p 너비를 가져오지 않는다. */
+      /* 기준요소는 가까운 조상부터 position: static;을 제외
+      position 값을 가진 조상이 기준요소 */
+      left: 0;
+      top: 0;
+    }
+
+    .box1 {
+      position: static;
+      /* static에서는 좌표가 먹는 않는다. */
+      left: 200px;
+      top: 200px;
+    }
+
+    /* z-index 적용
+      left right top bottom 적용
+      기준 본인 원래위치
+      일반 흐름을 유지
+      position:absolute의 기준 요소가 될 수 있음 */
+    .box2 {
+      position: relative;
+      /* left: 200px;
+      top: 200px; */
+    }
+
+    .box3 {
+      /* position:absolute;는 일반흐름에서 제외(부모요소 인식x)
+      기준 요소 시작은 해당 0,0*/
+      /* 조상들에게 position:static을 제외한 position 값을 지정한 게 없으면 body값이 기준이 됨 */
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+
+    .box4 {
+      position: fixed;
+      left: 0;
+      top: 0;
+      width: 100%;
+      box-sizing: border-box;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- .wrap>.box.box$*4.box-p>.box-c>{box$} -->
+  <div class="wrap">
+    <div class="box box1 box-p">
+      <div class="box-c">box1</div>
+    </div>
+    <div class="box box2 box-p">
+      <div class="box-c">box2</div>
+    </div>
+    <div class="box box3 box-p">
+      <div class="box-c">box3</div>
+    </div>
+    <div class="box box4 box-p">
+      <div class="box-c">box4</div>
+    </div>
+  </div>
+</body>
+
+</html>
