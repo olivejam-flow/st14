@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>auto-fill auto-fit 연습</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    .wrap {
+      margin: 50px auto;
+      width: 90%;
+      max-width: 1400px;
+      min-width: 340px;
+    }
+
+    .container {
+      /* background-color: #ff6; */
+      /* border: 4px solid #ccc; */
+    }
+
+    .item {
+      background-color: #6ff;
+      text-align: center;
+    }
+
+    .grid-container {
+      display: grid;
+      gap: 20px;
+      grid-auto-rows: auto;
+      /* 암시적 그리드 */
+      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+      /*
+      auto-fill과 auto-fit은 행이나 열에 몇개의 셀이 올지 정해지지 않았을 때 사용하면 좋음 
+      auto-fill: repeat(auto-fill, minmax(100px, 1fr))
+      컨테이너에 들어갈 수 있는 만큼 아이템을 자동으로 반복
+      1fr을 지정해도 공백을 유지
+      auto-fit: repeat(auto-fit, minmax(340px, 1fr))
+      컨테이너에 들어갈 수 있는 만큼 아이템을 자동으로 반복
+      남은 여백은 아이템에 나눠서 분배
+      컨테이너의 크기에 맞게 자동으로 반복하면서 자연스럽게 컨테이너에 포함되는 아이템의 수가 조절됨
+      */
+    }
+
+    .item {
+      aspect-ratio: 1;
+      /* 종횡비 */
+    }
+
+    .item:nth-child(1),
+    .item:nth-child(3),
+    .item:nth-child(5) {
+      background-image: url(../assets/images/3f0c7b3663a5a8fdd5fbd8ef7c52e230.png);
+      background-position: center 0;
+      background-size: cover;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <div class="container grid-container">
+      <div class="item">1</div>
+      <div class="item">2</div>
+      <div class="item">3</div>
+      <div class="item">4</div>
+      <div class="item">5</div>
+      <div class="item">6</div>
+    </div>
+  </div>
+</body>
+
+</html>
