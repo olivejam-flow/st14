@@ -1,0 +1,24 @@
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+
+.swiper {
+   width: 70%;
+   height: 400px;
+   background-color: #ccc;
+   border: 1px solid #000;
+}
+
+.swiper-slide {
+   text-align: center;
+   /* align-self: center; swiper-slide가 이미 부모의 너비/높이를 쓰고 있어서 가운데 정렬이 안됨 */
+   align-content: center;
+}
+.swiper-slide:nth-child(odd) {
+   background-color: #ff6;
+}
+.swiper-slide:nth-child(even) {
+   background-color: #f6f;
+}
