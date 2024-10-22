@@ -4,18 +4,15 @@
 @import url(variables.css);
 @import url(common.css);
 
-/* main-content */
+/* .main-content */
 .container {
    padding-top: 70px;
    padding-bottom: 160px;
 }
-
-.navercorp.main .main-content {
-}
 .navercorp.main .main-content__inner {
    display: flex;
    position: relative;
-   max-width: 1600px;
+   max-width: 1900px;
    margin: 0 auto; /*정렬은 크기가 제한이 있어야 적용이 됩니다.*/
 }
 .navercorp.main .cont__area {
@@ -24,7 +21,9 @@
 .navercorp.main .cont__list {
 }
 
-/* .cont-summary */
+/****************
+*.cont__summary *
+*****************/
 .navercorp.main .cont-summary .cont__list {
    display: grid;
    gap: 20px;
@@ -42,6 +41,7 @@
    background-color: var(--mainBg);
    transition: background 0.3s;
 }
+
 .navercorp.main .cont-summary .cont__area.type-b .media {
    display: none;
 }
@@ -49,30 +49,25 @@
    order: 1;
    grid-column: 1/3;
    grid-row: 1/4;
-   background-color: #000;
 }
 .navercorp.main .cont-summary .cont__area.type-b .story {
    order: 2;
    grid-column: 3/5;
    grid-row: 1/2;
-   /* background-color: #00f; */
 }
 .navercorp.main .cont-summary .cont__area.type-b .ad {
    order: 3;
-   /* background-color: #0f0; */
 }
 .navercorp.main .cont-summary .cont__area.type-b .recruit {
    order: 5;
-   /* background-color: #ff6; */
 }
 .navercorp.main .cont-summary .cont__area.type-b .stock {
    order: 6;
-   /* background-color: #6ff; */
 }
 .navercorp.main .cont-summary .cont__area.type-b .ir {
    order: 4;
-   /* background-color: #f6f; */
 }
+
 .navercorp.main .cont__link {
    display: flex;
    flex-direction: column;
@@ -93,7 +88,6 @@
    width: 100%;
    height: 100%;
 }
-
 .navercorp.main .cont-summary .thumb-box .thumbnail {
    width: 100%;
    height: 100%;
@@ -115,7 +109,7 @@
 }
 
 .navercorp.main .cont-summary .news .thumb-box {
-   height: 470%;
+   height: 470px;
    position: relative;
 }
 
@@ -127,17 +121,19 @@
 .navercorp.main .cont-summary .cont__item .text-wrap {
    z-index: 10;
 }
+
 .navercorp.main .cont-summary .cont__item .head,
 .navercorp.main .cont-summary .cont__item .category,
 .navercorp.main .cont-summary .cont__item .title {
    display: block;
 }
+
 .navercorp.main .cont-summary .cont__item .head,
 .navercorp.main .cont-summary .cont__item .category {
    z-index: 10;
    font-size: 14px;
    font-weight: 700;
-   line-height: 26px; /*한줄명령일때만 가능함*/
+   line-height: 26px;
    letter-spacing: -0.3px;
 }
 .navercorp.main .cont-summary .cont__item .title {
@@ -162,14 +158,13 @@
    background-size: contain;
 }
 
-/* .news */
 .navercorp.main .cont-summary .news .cont__link {
    padding: 0;
    transition: all 0.3s;
 }
 
 .navercorp.main .cont-summary .news .cont__link:hover {
-   color: #f00; /* a태그는 부모에 컬러를 상속받지 못함*/
+   color: #ff5f00;
 }
 .navercorp.main .cont-summary .news .thumb-box {
    position: relative;
@@ -181,6 +176,7 @@
    padding: 16px 40px 16px 16px;
    background-color: var(--newslistBg);
 }
+
 .navercorp.main .cont-summary .news .title {
    /* 여러줄 말줄임 ... 표시시작 */
    display: block;
@@ -209,7 +205,6 @@
       center;
    background-size: contain;
 }
-
 .navercorp.main .cont-summary .story .title {
    display: block;
    display: -webkit-box;
@@ -222,15 +217,20 @@
    letter-spacing: -0.8px;
    margin-top: 10px;
 }
+
 /* li.cont__item.recruit */
 .navercorp.main .cont-summary .recruit {
-   background-color: blue;
+   background-color: #022be9;
 }
 .navercorp.main .cont-summary .recruit:hover {
-   background-color: darkorange;
+   background-color: #ff5f00;
 }
 
 /* .stock */
+/* .navercorp.main .cont-summary {
+  background-color: #ccc;
+} */
+/* .navercorp.main .cont-summary .cont__item{} */
 
 .navercorp.main .cont-summary .stock a.cont__link {
    padding: 16px;
@@ -238,7 +238,7 @@
    /* display: flex;
    flex-direction: column;
    justify-content: space-between;
-   height: 100%; */
+   height: 100%;  */
    /*★★★자식의 높이가 부모의 높이를 따르기위해★★*/
 }
 .navercorp.main .cont-summary .stock .head {
@@ -329,6 +329,7 @@
 
 /* .main-content__title */
 .navercorp.main .main-content__title {
+   /* flex item */
    flex-shrink: 0;
    position: relative;
    width: 340px;
@@ -353,16 +354,17 @@
 }
 .navercorp.main .main-content__title .time {
    display: flex;
-   margin-top: 20xp;
+   margin-top: 20px;
    letter-spacing: 0;
 }
-/* animation 추가 */
+/* animation추가 */
 .navercorp.main .main-content__title .time .colon {
    animation-name: blink;
    animation-duration: 1s;
    animation-iteration-count: infinite;
 }
-/* .cont-summary의 .btn-arrow 아이콘 표시 */
+
+/* .main-content__title의 .btn-arrow 아이콘표시 */
 .navercorp.main .main-content__title .btn-arrow {
    position: absolute;
    left: 0;
@@ -379,13 +381,252 @@
 .navercorp.main .cont-summary .main-content__title::after {
    content: none;
 }
+
+/**************
+.cont-feature *
+**************/
+/* 
+1. 주요서비스와 기술   
+   1600이상 일때는 두줄
+   1599 보다 아래 일때는 1줄
+    .main-content__title strong br{
+    display: none;
+}
+2. 모바일 일대 swiper-slide가 1.x개 나올 수 있도록
+*/
 .navercorp.main .cont-feature {
    padding: 100px 0 100px 60px;
+}
+.navercorp.main .cont-feature .cont__area {
+   overflow: hidden;
+}
+.navercorp.main .cont-feature .cont__wrap {
+   /* 네비게이션 버튼 클릭 시  오른쪽 끝은 swiper-slide 
+ 움직이면서 보여야 해요 
+ .navercorp.main .main-content__inner {
+    max-width: 1900px;
+    margin: 0 auto;
+}
+ .navercorp.main .cont-feature {
+    padding: 100px 0 100px 60px;
+}
+  .navercorp.main .cont-feature .cont__wrap {
+  overflow: unset;
+}
+ */
+}
+.navercorp.main .cont-feature .cont__list {
+}
+.navercorp.main .cont-feature .cont__item {
+   /* 2. 모바일 일대 swiper-slide가 1.x개 나올 수 있도록 */
+   width: 340px;
+   margin-left: 20px;
+}
+.navercorp.main .cont-feature .cont__item:first-child {
+   margin-left: 0;
+}
+.navercorp.main .cont-feature .thumb-box {
+   position: relative;
+   overflow: hidden;
+}
+.navercorp.main .cont-feature .thumb-box .thumbnail {
+   padding-top: 320px; /*백그라운드이미지의 높이역활*/
+   background-repeat: no-repeat;
+   background-position: center;
+   background-size: cover;
+   transition: transform 0.3s;
+}
+.navercorp.main .cont-feature .cont__item:nth-child(1) .thumbnail {
+   background-image: url(../img/slider1.jpg);
+}
+.navercorp.main .cont-feature .cont__item:nth-child(2) .thumbnail {
+   background-image: url(../img/slider2.png);
+}
+.navercorp.main .cont-feature .cont__item:nth-child(3) .thumbnail {
+   background-image: url(../img/slider3.png);
+}
+.navercorp.main .cont-feature .cont__item:nth-child(4) .thumbnail {
+   background-image: url(../img/slider4.png);
+}
+.navercorp.main .cont-feature .cont__item:nth-child(5) .thumbnail {
+   background-image: url(../img/slider5.png);
+}
+.navercorp.main .cont-feature .text-box {
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+   min-height: 320px;
+   padding: 26px 20px 20px;
+   color: #fff;
+   font-weight: 700;
+   text-transform: uppercase;
+}
+.navercorp.main .cont-feature .cont__item:nth-child(1) .text-box {
+   background: #030659;
+}
+.navercorp.main .cont-feature .cont__item:nth-child(2) .text-box {
+   background: #000;
+}
+.navercorp.main .cont-feature .cont__item:nth-child(3) .text-box {
+   background: #9bacba;
+}
+.navercorp.main .cont-feature .cont__item:nth-child(4) .text-box {
+   background: #598de8;
+}
+.navercorp.main .cont-feature .cont__item:nth-child(5) .text-box {
+   background: #8731e3;
+}
+.navercorp.main .cont-feature .text-box .category {
+   display: block;
+   font-size: 14px;
+}
+.navercorp.main .cont-feature .text-box .title {
+   display: block;
+   margin-top: 42px;
+   font-size: 28px;
+   line-height: 42px;
+   letter-spacing: -0.1px;
+}
+.navercorp.main .cont-feature .text-box .desc {
+   text-transform: none;
+   font-size: 14px;
+   line-height: 22px;
+   letter-spacing: -0.25px;
+}
+/* swiper 네비게이션 이밎로 변경 */
+.navercorp.main .cont-feature .cont__btn .swiper-button-next,
+.navercorp.main .cont-feature .cont__btn .swiper-button-prev {
+   /*브라우저가 인식하지만 브라우저에 표시x*/
+   /* visibility: hidden; */
+   width: 40px;
+   height: 40px;
+   margin-top: 0;
+   background: url(../img/common/swiper-btn.png) no-repeat center;
+   background-size: contain;
+   transition: all 0.3s;
+   pointer-events: auto;
+   /* opacity: 0; */
+   /* 기분요소의 가운데 위치 */
+   top: 50%;
+   transform: translateY(-50%);
+}
+.navercorp.main .cont-feature .cont__btn .swiper-button-next {
+   right: 0;
+   transform: rotate(180deg) translateY(50%);
+}
+.navercorp.main .cont-feature .cont__btn .swiper-button-prev {
+   left: 0;
+}
+/* swiperr처음이나 끝일때는  네비게이션 표시x */
+.navercorp.main
+   .cont-feature
+   .cont__btn
+   .swiper-button-next.swiper-button-disabled,
+.navercorp.main
+   .cont-feature
+   .cont__btn
+   .swiper-button-prev.swiper-button-disabled {
+   opacity: 0;
+   cursor: auto; /*마우스 포인트는 상황에 맞게 바뀌어라*/
+   pointer-events: none; /*해당영역에 클릭 이벤트가 발생해도 실행x*/
+}
+.navercorp.main .cont-feature .cont__btn .swiper-button-next:hover,
+.navercorp.main .cont-feature .cont__btn .swiper-button-prev:hover {
+   background-image: url(../img/common/swiper-btn-hover.png);
+}
+.navercorp.main .cont-feature .cont__btn .swiper-button-next:after,
+.navercorp.main .cont-feature .cont__btn .swiper-button-prev:after {
+   content: none; /*가상선택자 after 무력화*/
+}
+/* swiper 움직일때 .swiper 영역 벗어난거도 보이게 처리*/
+.navercorp.main .cont-feature .cont__wrap {
+   overflow: unset;
+}
+/********************** 
+*  .cont-shortcut     *
+***********************/
+/* 
+  타이틀, 아이콘 이 양끝정렬
+  cont__item hover 타이틀, 아이콘 색상변경, 해당 이미지 가운데 표시
+     hover 해당 이미지 표시
+            이미지너비 작게-> 정사각형맞는 크기 변경 푯
+   out 해당 바로 표시x
+*/
+.navercorp.main .cont-shortcut {
+   padding: 60px 60px 0;
+}
+.navercorp.main .cont-shortcut .cont__item {
+   position: relative;
+   border-top: 1px solid var(--border01);
+}
+.navercorp.main .cont-shortcut .cont__item:nth-child(1) {
+   border-top: 0;
+}
+.navercorp.main .cont-shortcut .cont__link {
+   flex-direction: row;
+   justify-content: space-between;
+   align-items: center;
+   padding: 32px 20px;
+}
+.navercorp.main .cont-shortcut .cont__item:nth-child(1) .cont__link {
+   padding-top: 0;
+}
+.navercorp.main .cont-shortcut .cont__item .title {
+   position: relative;
+   font-size: 32px;
+   font-weight: 700;
+   line-height: 52px;
+   letter-spacing: -1.26px;
+   transition: color 0.3s;
+}
+.navercorp.main .cont-shortcut .cont__item:hover .title {
+   color: #ff5f00;
+}
+.navercorp.main .cont-shortcut .cont__item .ico-link {
+}
+.navercorp.main .cont-shortcut .cont__item .ico-link:after {
+   content: "";
+   display: block;
+   width: 30px;
+   height: 30px;
+   border-radius: 50%;
+   background: var(--color-sub02) url(../img/common/ic-quicklink.png) no-repeat
+      center;
+   background-size: contain;
+   transition: background 0.3s;
+}
+.navercorp.main .cont-shortcut .cont__item .ico-link.outlink:after {
+   transform: rotate(-45deg);
+}
+.navercorp.main .cont-shortcut .cont__item .thumb-box {
+   visibility: hidden;
+   position: absolute;
+   top: 50%; /*가운데부터 시작이라 아래로 치우쳐져있어요*/
+   left: 50%; /*가운데부터 시작이라 오른쪽은 치우쳐져있어요*/
+   transform: translate(-50%, -50%); /*이미지를 부모요소의 가운데*/
+   z-index: 1;
+   width: 300px;
+   height: 300px;
+   /* opacity: 0; */
+   opacity: 0;
+   transition: opacity linear 0.3s;
+   pointer-events: none;
+}
+.navercorp.main .cont-shortcut .cont__item:hover .thumb-box {
+   visibility: visible;
+   opacity: 1;
+   animation: thumbBoxEffect 0.3s ease-in-out forwards;
+}
+.navercorp.main .cont-shortcut .cont__item .thumb-box img {
+   transform: translate(100%, 0, 0);
+}
+.navercorp.main .cont-shortcut .cont__item:hover .thumb-box img {
+   animation: thumbnailEffect 0.3s ease-in-out forwards;
 }
 
 @media (max-width: 1919px) {
    .navercorp.main .main-content__inner {
-      max-width: 1600px;
+      max-width: 1900px;
    }
    .navercorp.main .cont-summary {
       padding: 130px 40px 60px;
@@ -414,17 +655,27 @@
    .navercorp.main .main-content__title {
       width: 287px;
    }
+
+   /**************
+.cont-feature *
+**************/
    .navercorp.main .cont-feature {
       padding: 100px 0 100px 40px;
    }
+
+   /********************** 
+*  .cont-shortcut     *
+***********************/
+   .navercorp.main .cont-shortcut {
+      padding: 60px 40px 0;
+   }
 }
-/* //@media (max-width:1919px) */
+/*@media (max-width:1919px)*/
 
 @media (max-width: 1599px) {
    .container {
       padding-bottom: 140px;
    }
-
    .navercorp.main .main-content__inner {
       max-width: none;
       flex-direction: column;
@@ -438,7 +689,7 @@
    .navercorp.main .cont-summary .cont__list {
       gap: 16px;
       grid-template-rows: unset;
-      /* grid-template-rows: 40.171% 1fr 1fr; */
+      /* grid-template-columns: 40.171% 1fr 1fr; */
    }
    .navercorp.main .cont-summary .cont__area.type-b .cont__list {
       grid-template-rows: unset;
@@ -450,9 +701,11 @@
    .navercorp.main .cont-summary .cont__area.type-b .news {
       padding-top: unset;
    }
+
    .navercorp.main .cont-summary .cont__area.type-b .story {
-      padding-top: 54.43%;
+      padding-top: 54.432%;
    }
+
    .navercorp.main .cont-summary .cont__link {
       position: absolute;
       top: 0;
@@ -461,6 +714,7 @@
       height: 100%;
       padding: 12px 40px 12px 12px;
    }
+
    .navercorp.main .cont-summary .news .thumb-box {
       height: 59.213%;
    }
@@ -500,22 +754,75 @@
       letter-spacing: -1.2px;
    }
    .navercorp.main .main-content__title::after {
-      content: none;
+      content: none; /*after 무력화*/
    }
+   /* .main-content__title의 .btn-arrow 의 위치 수정 */
+   /* 기준요소 오른쪽 끝  기준요소의 바닥 */
    .navercorp.main .main-content__title .btn-arrow {
-      left: auto; /* 상위미디어 작성한 left를 무력화 */
+      left: auto; /*상위미디어 작성한 left를 무력화*/
       right: 0;
       bottom: 0;
       width: 32px;
       height: 36px;
    }
+   /**************
+.cont-feature *
+**************/
+   .navercorp.main .cont-feature {
+      padding: 120px 0;
+   }
+   .navercorp.main .cont-feature .main-content__title {
+      padding: 0 30px;
+   }
+   .navercorp.main .cont-feature .main-content__title strong br {
+      /* ★★★스타일북, 룩북, 상세페이지에서 ★★  줄바꿈을 관리할 때 유용*/
+      display: none;
+   }
+   .navercorp.main .cont-feature .cont__item {
+      width: 300px;
+      margin-left: 16px;
+   }
+   .navercorp.main .cont-feature .thumb-box .thumbnail {
+      padding-top: 282px;
+   }
+   .navercorp.main .cont-feature .text-box .category {
+      font-size: 12px;
+   }
+   .navercorp.main .cont-feature .text-box .title {
+      margin-top: 36px;
+      font-size: 26px;
+      line-height: 38px;
+      letter-spacing: -0.1px;
+   }
+   .navercorp.main .cont-feature .text-box .desc {
+      font-size: 12px;
+      line-height: 20px;
+   }
+   .navercorp.main .cont-feature .cont__area {
+      padding: 0 30px;
+      margin-top: 40px;
+   }
+   /********************** 
+*  .cont-shortcut     *
+***********************/
+   .navercorp.main .cont-shortcut {
+      padding: 0 30px;
+   }
+   .navercorp.main .cont-shortcut .cont__area {
+      margin-top: 60px;
+   }
+   .navercorp.main .cont-shortcut .cont__link {
+      padding: 22px 0 25px;
+   }
 }
-/* //@media (max-width:1599px) */
+/*@media (max-width:1599px)*/
 
 @media (max-width: 1023px) {
    .navercorp.main .cont-summary {
       padding: 110px 30px 0;
    }
+
+   /*.cont-summary  */
    .navercorp.main .cont-summary .cont__list {
       gap: 12px;
       grid-template-columns: 1fr 1fr;
@@ -523,21 +830,23 @@
    .navercorp.main .cont-summary .cont__area.type-b .cont__list {
       grid-template-columns: repeat(2, 1fr);
    }
+
    .navercorp.main .cont-summary .cont__item {
-      /* grid-column: 1/3;
-      grid-row: 1/2; */
       padding-top: 52.84%;
    }
+
    .navercorp.main .cont-summary .cont__area.type-b .news {
       grid-column: 1/3;
       grid-row: 1/2;
       padding-top: 103.25%;
    }
+
    .navercorp.main .cont-summary .cont__area.type-b .story {
       grid-column: 1/3;
       grid-row: 2/3;
       padding-top: 54.52%;
    }
+
    .navercorp.main .cont-summary .cont__link {
       padding: 16px 40px 20px 16px;
    }
@@ -559,17 +868,51 @@
    .navercorp.main .cont-summary .story .category {
       font-size: 12px;
    }
+
    .navercorp.main .cont-summary .stock .num-info {
       font-size: 12px;
    }
    .navercorp.main .cont-summary .ir .title {
       margin-top: 12px;
    }
+
+   /**************
+.cont-feature *
+**************/
    .navercorp.main .cont-feature {
       padding: 120px 0 120px;
    }
+   .navercorp.main .cont-feature .cont__item {
+      width: 320px;
+      margin-left: 12px;
+   }
+   .navercorp.main .cont-feature .thumb-box .thumbnail {
+      padding-top: 301px;
+   }
+   .navercorp.main .cont-feature .text-box .title {
+      margin-top: 48px;
+      font-size: 28px;
+      line-height: 42px;
+      letter-spacing: -0.1px;
+   }
+   .navercorp.main .cont-feature .cont__btn {
+      display: none;
+   }
+   /********************** 
+*  .cont-shortcut     *
+***********************/
+   .navercorp.main .cont-shortcut .main-content__title {
+      font-size: 30px;
+      letter-spacing: -1px;
+   }
+   .navercorp.main .cont-shortcut .cont__area {
+      margin-top: 55px;
+   }
+   .navercorp.main .cont-shortcut .cont__link {
+      padding: 22px 0 25px;
+   }
 }
-/* //@media (max-width:1023px) */
+/*@media (max-width:1023px)*/
 
 @media (max-width: 767px) {
    .navercorp.main .cont-summary {
@@ -612,11 +955,6 @@
    .navercorp.main .cont-summary .news .thumb-box {
       height: 64.434vw;
    }
-   /* .navercorp.main .cont-summary .cont__item .head {
-      font-size: 12px;
-      line-height: 20px;
-      letter-spacing: normal;
-   } */
    .navercorp.main .cont-summary .cont__item .title {
       font-size: 16px;
    }
@@ -627,13 +965,11 @@
       font-size: 20px;
       font-weight: 700;
    }
-   .navercorp.main .cont-summary .recruit .title {
-      font-size: 20px;
-      font-weight: 700;
-   }
+
    .navercorp.main .cont-summary .stock .num-info {
       line-height: 26px;
    }
+
    .navercorp.main .cont-summary .stock .text-wrap {
       text-align: right;
    }
@@ -643,6 +979,10 @@
    .navercorp.main .main-content__title {
       font-size: 34px;
    }
+
+   /**************
+.cont-feature *
+**************/
    .navercorp.main .cont-feature {
       padding: 120px 0;
    }
@@ -651,13 +991,27 @@
       font-size: 30px;
       letter-spacing: -1px;
    }
+   .navercorp.main .cont-feature .thumb-box .thumbnail {
+      padding-top: 300px;
+   }
+   .navercorp.main .cont-feature .cont__area {
+      padding: 0 20px;
+   }
+   /********************** 
+*  .cont-shortcut     *
+***********************/
+   .navercorp.main .cont-shortcut {
+      padding: 0 20px;
+   }
+   .navercorp.main .cont-shortcut .cont__link {
+      padding: 26px 4px 27px 0;
+   }
 }
-
-/* //@media (max-width:76px) */
+/*@media (max-width:767px)*/
 
 @media (max-width: 375px) {
 }
-/* //@media (max-width:375px) */
+/*@media (max-width:375px)*/
 
 @keyframes blink {
    0% {
@@ -668,5 +1022,23 @@
    }
    100% {
       opacity: 1;
+   }
+}
+
+@keyframes thumBoxEffect {
+   0% {
+      transform: translate(-150%.50%);
+   }
+   100% {
+      transform: translate(-50%, -50%);
+   }
+}
+
+@keyframes thumbnailEffent {
+   0% {
+      transform: translate(100%, 0);
+   }
+   100% {
+      transform: translate(0, 0);
    }
 }

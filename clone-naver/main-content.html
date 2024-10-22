@@ -9,7 +9,10 @@
   <link rel="stylesheet" href="css/font.css">
   <link rel="stylesheet" href="css/variables.css">
   <link rel="stylesheet" href="css/common.css"> -->
+  <!-- swiper 라이브러리 css 연결 -->
+  <link rel="stylesheet" href="js/swiper/swiper-bundle.min.css">
   <link rel="stylesheet" href="css/style.css">
+
 </head>
 
 <body>
@@ -39,6 +42,7 @@
             <a href="#section_shortcut" class="btn-arrow"><span class="blind">scroll down</span></a>
           </div>
           <!-- //.main-content__title -->
+          <!--.cont__area.type-b -->
           <div class="cont__area type-b">
             <ul class="cont__list">
               <li class="cont__item media">
@@ -56,14 +60,13 @@
                 <a class="cont__link" href="https://www.navercorp.com/media/pressReleasesDetail?seq=32077"
                   data-nclick="mct.anews">
                   <div class="thumb-box">
-                    <div class="thumbnail">
-                    </div>
+                    <div class="thumbnail"></div>
                   </div>
                   <div class="text-box">
                     <div class="text-wrap">
                       <span class="head">보도자료</span>
-                      <strong class="title">네이버, 1784 찾은 파이살 리야드 시장 등 일행에 ‘테크 컨버전스’ 소개네이버, 1784 찾은 파이살 리야드 시장 등 일행에 ‘테크
-                        컨버전스’ 소개네이버, 1784 찾은 파이살 리야드 시장 등 일행에 ‘테크 컨버전스’ 소개</strong>
+                      <strong class="title">네이버, 1784 찾은 파이살 리야드 시장 등 일행에 ‘테크 컨버전스’ 소개 네이버, 1784 찾은 파이살 리야드 시장 등 일행에 ‘테크
+                        컨버전스’ 소개</strong>
                     </div>
                     <span class="date">2024.10.09</span>
                   </div>
@@ -74,8 +77,7 @@
                 <a class="cont__link" href="https://www.navercorp.com/story/storyDetail?seq=31952"
                   data-nclick="mct.astory">
                   <div class="thumb-box">
-                    <div class="thumbnail">
-                    </div>
+                    <div class="thumbnail"></div>
                   </div>
                   <span class="head">스토리</span>
                   <div class="text-wrap">
@@ -89,8 +91,7 @@
                   <span class="head">치지직 정식 출시</span>
                   <strong class="title"></strong>
                   <div class="thumb-box">
-                    <div class="thumbnail">
-                    </div>
+                    <div class="thumbnail"></div>
                   </div>
                 </a>
               </li>
@@ -108,10 +109,10 @@
                     <!-- 상승 : up / 하락 : down 클래스명 추가시 색상, 아이콘 변경 -->
                     <span class="num-info down">
                       <span class="blind">상승</span>
-                      <span class="num">-2,100</span>
-                      (<span class="percent">-1.21%</span>)
+                      <span class="num">-2,500</span>
+                      (<span class="percent">-1.44%</span>)
                     </span>
-                    <strong class="count">171,200</strong>
+                    <strong class="count">170,800</strong>
                   </div>
                 </a>
               </li>
@@ -134,10 +135,11 @@
           <div class="main-content__title">
             <strong data-i18n="[html]main:title01">주요 서비스와 <br>기술</strong>
           </div>
+          <!--.cont-feature .cont__area  -->
           <div class="cont__area">
-            <div class="cont__wrap">
-              <ul class="cont__list" aria-live="polite">
-                <li class="cont__item">
+            <div class="cont__wrap swiper myswiper">
+              <ul class="cont__list swiper-wrapper">
+                <li class="cont__item swiper-slide">
                   <a class="cont__link" href="https://datacenter.navercorp.com/" onclick="nclk_v2(event, 'sct.dtk')"
                     target="_blank">
                     <div class="thumb-box">
@@ -152,7 +154,7 @@
                     </div>
                   </a>
                 </li>
-                <li class="cont__item">
+                <li class="cont__item  swiper-slide">
                   <a class="cont__link" href="/tech/techAI" onclick="nclk_v2(event, 'sct.nai')">
                     <div class="thumb-box">
                       <div class="thumbnail"><span class="blind">썸네일 이미지</span></div>
@@ -166,7 +168,7 @@
                     </div>
                   </a>
                 </li>
-                <li class="cont__item">
+                <li class="cont__item  swiper-slide">
                   <a class="cont__link" href="/tech/tech1784" onclick="nclk_v2(event, 'sct.1784')">
                     <div class="thumb-box">
                       <div class="thumbnail"><span class="blind">썸네일 이미지</span></div>
@@ -180,7 +182,7 @@
                     </div>
                   </a>
                 </li>
-                <li class="cont__item">
+                <li class="cont__item  swiper-slide">
                   <a class="cont__link" href="/esg/projectFlower" onclick="nclk_v2(event, 'sct.flw')">
                     <div class="thumb-box">
                       <div class="thumbnail"><span class="blind">썸네일 이미지</span></div>
@@ -195,7 +197,7 @@
                     </div>
                   </a>
                 </li>
-                <li class="cont__item">
+                <li class="cont__item  swiper-slide">
                   <a class="cont__link" href="/tech/digitalTwin" onclick="nclk_v2(event, 'sct.twt')">
                     <div class="thumb-box">
                       <div class="thumbnail"><span class="blind">썸네일 이미지</span></div>
@@ -210,9 +212,13 @@
                   </a>
                 </li>
               </ul>
-              <div class="cont__btn"></div>
-              <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span>
+              <div class="cont__btn">
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+              </div>
+              <div class="swiper-scrollbar"></div>
             </div>
+            <!-- //.swiper -->
           </div>
         </div>
         <!-- //.cont-feature -->
@@ -227,7 +233,7 @@
                   <strong class="title" data-i18n="main:goTo.list01">제휴제안을 위한</strong>
                   <span class="ico-link"><span class="blind">제휴제안으로 이동</span></span>
                   <div class="thumb-box">
-                    <img src="/img/pc/main-shortcut-1.png" alt="">
+                    <img src="./img/pc/main-shortcut-1.png" alt="">
                   </div>
                 </a>
               </li>
@@ -236,7 +242,7 @@
                   <strong class="title" data-i18n="main:goTo.list02">미디어를 위한</strong>
                   <span class="ico-link"><span class="blind">미디어로 이동</span></span>
                   <div class="thumb-box">
-                    <img src="/img/pc/main-shortcut-2.png" alt="">
+                    <img src="./img/pc/main-shortcut-2.png" alt="">
                   </div>
                 </a>
               </li>
@@ -245,7 +251,7 @@
                   <strong class="title" data-i18n="main:goTo.list03">개발자를 위한</strong>
                   <span class="ico-link outlink"><span class="blind">네이버 d2로 이동</span></span>
                   <div class="thumb-box">
-                    <img src="/img/pc/main-shortcut-3.png" alt="">
+                    <img src="./img/pc/main-shortcut-3.png" alt="">
                   </div>
                 </a>
               </li>
@@ -254,7 +260,7 @@
                   <strong class="title" data-i18n="main:goTo.list04">투자자를 위한</strong>
                   <span class="ico-link"><span class="blind">투자정보로 이동</span></span>
                   <div class="thumb-box">
-                    <img src="/img/pc/main-shortcut-4.png" alt="">
+                    <img src="./img/pc/main-shortcut-4.png" alt="">
                   </div>
                 </a>
               </li>
@@ -263,7 +269,7 @@
                   <strong class="title" data-i18n="main:goTo.list05">중소상공인을 위한</strong>
                   <span class="ico-link outlink"><span class="blind">네이버 비즈니스로 이동</span></span>
                   <div class="thumb-box">
-                    <img src="/img/pc/main-shortcut-5.png" alt="">
+                    <img src="./img/pc/main-shortcut-5.png" alt="">
                   </div>
                 </a>
               </li>
@@ -272,7 +278,7 @@
                   <strong class="title" data-i18n="main:goTo.list06">입사지원자를 위한</strong>
                   <span class="ico-link outlink"><span class="blind">채용 페이지로 이동</span></span>
                   <div class="thumb-box">
-                    <img src="/img/pc/main-shortcut-6.png" alt="">
+                    <img src="./img/pc/main-shortcut-6.png" alt="">
                   </div>
                 </a>
               </li>
@@ -281,7 +287,7 @@
                   <strong class="title" data-i18n="main:goTo.list07">창작자를 위한</strong>
                   <span class="ico-link"><span class="blind">프로젝트꽃으로 이동</span></span>
                   <div class="thumb-box">
-                    <img src="/img/pc/main-shortcut-7.png" alt="">
+                    <img src="./img/pc/main-shortcut-7.png" alt="">
                   </div>
                 </a>
               </li>
@@ -296,6 +302,27 @@
     <div class="dimmed"></div>
 
   </div>
+
+
+  <!-- swiper 라이브러리 설치 -->
+  <script src="js/swiper/swiper-bundle.min.js"></script>
+
+  <!-- Initialize Swiper -->
+  <script>
+    var swiper = new Swiper(".myswiper", {
+      slidesPerView: "auto",
+      // 	// 본인 .swiper-slide에 (.cont__item) 여백을 주면 spaceBetween:0
+      spaceBetween: 0,
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+      scrollbar: {
+        el: ".swiper-scrollbar",
+        hide: false,
+      },
+    });
+  </script>
 </body>
 
 </html>
