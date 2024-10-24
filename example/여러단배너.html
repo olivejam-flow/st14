@@ -29,6 +29,10 @@
     /*여기서 부터 단 배너 css */
     .mybanner {
       --banner-gap: 20px;
+      --banner-m-h-gap: 0px;
+      /* 모바일 수평 갭 */
+      --banner-m-v-gap: 10px;
+      /* 모바일 수직 갭 */
       --banner-top-margin: 50px;
       --banner-bottom-margin: 50px;
       --banner-top-padding: 10px;
@@ -116,6 +120,37 @@
       color: grey;
       margin-bottom: var(--banner-bottom-margin);
     }
+
+    @media (max-width:767px) {
+      .mybanner__list {
+        gap: var(--banner-m-h-gap) var(--banner-m-v-gap);
+        flex-wrap: wrap;
+      }
+
+      .mybanner .mybanner__item.m-col1 {
+        width: calc(var(--col1) - var(--banner-m-v-gap));
+      }
+
+      .m-col2 {
+        width: calc(var(--col2) - var(--banner-m-v-gap));
+      }
+
+      .m-col3 {
+        width: calc(var(--col3) - var(--banner-m-v-gap));
+      }
+
+      .m-col4 {
+        width: calc(var(--col4) - var(--banner-m-v-gap));
+      }
+
+      .m-col5 {
+        width: calc(var(--col5) - var(--banner-m-v-gap));
+      }
+
+      .mybanner__item {
+        flex: 1 0 auto;
+      }
+    }
   </style>
 </head>
 
@@ -123,7 +158,7 @@
   <div class="mybanner">
     <div class="mybanner__inner">
       <ul class="mybanner__list grid2">
-        <li class="mybanner__item">
+        <li class="mybanner__item m-col2">
           <a href="" class="mybanner__link">
             <div class="thumb-box">
               <img src="/css/background/images/bg.jpg" alt="">
@@ -134,7 +169,7 @@
             </div>
           </a>
         </li>
-        <li class="mybanner__item">
+        <li class="mybanner__item m-col2">
           <a href="" class="mybanner__link">
             <div class="thumb-box">
               <img src="/css/background/images/bg.jpg" alt="">
@@ -145,7 +180,7 @@
             </div>
           </a>
         </li>
-        <li class="mybanner__item">
+        <li class="mybanner__item m-col2">
           <a href="" class="mybanner__link">
             <div class="thumb-box">
               <img src="/css/background/images/bg.jpg" alt="">
@@ -156,18 +191,6 @@
             </div>
           </a>
         </li>
-        <li class="mybanner__item">
-          <a href="" class="mybanner__link">
-            <div class="thumb-box">
-              <img src="/css/background/images/bg.jpg" alt="">
-            </div>
-            <div class="text-box">
-              <p class="text-title">배너제목</p>
-              <p class="text-desc">배너 설명 배너 설명</p>
-            </div>
-          </a>
-        </li>
-
 
       </ul>
     </div>
