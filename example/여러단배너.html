@@ -29,6 +29,11 @@
     /*여기서 부터 단 배너 css */
     .mybanner {
       --banner-gap: 20px;
+      /* PC 갭 */
+      --banner-m-h-gap: 10px;
+      /* 모바일 수평 갭 */
+      --banner-m-v-gap: 10px;
+      /* 모바일 수직 갭 */
       --banner-top-margin: 50px;
       --banner-bottom-margin: 50px;
       --banner-top-padding: 10px;
@@ -44,8 +49,6 @@
     .mybanner {
       margin-top: var(--banner-top-margin);
       margin-bottom: var(--banner-bottom-margin);
-      /* background-color: #ccc; */
-      /*삭제*/
     }
 
     .mybanner__inner {
@@ -53,8 +56,6 @@
       margin: 0 auto;
       padding-top: var(--banner-top-padding);
       padding-bottom: var(--banner-bottom-padding);
-      /* background-color: #f6f; */
-      /*삭제*/
     }
 
     .mybanner__list {
@@ -66,9 +67,10 @@
     .mybanner__item {
       flex: 1;
       box-sizing: border-box;
-      /* background-color: #66f; */
+
       border: 1px solid #b3b3b3;
       border-radius: 16px;
+      box-shadow: 0px 2px 5px rgba(184, 55, 38, 0.233);
 
     }
 
@@ -96,10 +98,17 @@
       display: block;
     }
 
+    .mybanner .thumb-box picture,
+    .mybanner .thumb-box picture source,
+    .mybanner .thumb-box picture img {
+      display: block;
+      width: 100%;
+    }
+
+
     .mybanner .thumb-box img {
       width: 100%;
       border-radius: 16px 16px 0 0;
-      /* border-radius: 15px 15px 0 0; */
     }
 
     .mybanner .text-box {
@@ -116,17 +125,63 @@
       color: grey;
       margin-bottom: var(--banner-bottom-margin);
     }
+
+    @media (max-width:720px) {
+      .mybanner__list {
+        gap: var(--banner-m-h-gap) var(--banner-m-v-gap);
+        flex-wrap: wrap;
+      }
+
+      .mybanner .mybanner__item.m-col1 {
+        width: calc(var(--col1) - var(--banner-m-v-gap));
+      }
+
+      .m-col2 {
+        width: calc(var(--col2) - var(--banner-m-v-gap));
+      }
+
+      .m-col3 {
+        width: calc(var(--col3) - var(--banner-m-v-gap));
+      }
+
+      .m-col4 {
+        width: calc(var(--col4) - var(--banner-m-v-gap));
+      }
+
+      .m-col5 {
+        width: calc(var(--col5) - var(--banner-m-v-gap));
+      }
+
+      .mybanner__item {
+        flex: 1 0 auto;
+        box-shadow: 0px 2px 5px rgba(184, 55, 38, 0.233);
+      }
+
+      @media (max-width:479px) {
+        .mybanner__item {
+          flex: 1 0 auto;
+          box-shadow: 0px 2px 5px rgba(38, 90, 31, 0.699);
+        }
+
+      }
+    }
+
+    /* .mybanner 단 배너 스타일 끝 */
   </style>
 </head>
 
 <body>
+  <!-- mybanner -->
   <div class="mybanner">
     <div class="mybanner__inner">
-      <ul class="mybanner__list grid2">
-        <li class="mybanner__item">
+      <ul class="mybanner__list grid3">
+        <li class="mybanner__item m-col2">
           <a href="" class="mybanner__link">
             <div class="thumb-box">
-              <img src="/css/background/images/bg.jpg" alt="">
+              <picture>
+                <source srcset="/mytest/img/img_768x768.jpg" media="(max-width: 720px)">
+                <img src="/mytest/img/img_1920x810.jpg" alt="">
+              </picture>
             </div>
             <div class="text-box">
               <p class="text-title">배너제목</p>
@@ -134,10 +189,13 @@
             </div>
           </a>
         </li>
-        <li class="mybanner__item">
+        <li class="mybanner__item m-col2">
           <a href="" class="mybanner__link">
             <div class="thumb-box">
-              <img src="/css/background/images/bg.jpg" alt="">
+              <picture>
+                <source srcset="/mytest/img/img_768x768.jpg" media="(max-width: 720px)">
+                <img src="/mytest/img/img_1920x810.jpg" alt="">
+              </picture>
             </div>
             <div class="text-box">
               <p class="text-title">배너제목</p>
@@ -145,10 +203,13 @@
             </div>
           </a>
         </li>
-        <li class="mybanner__item">
+        <li class="mybanner__item m-col1">
           <a href="" class="mybanner__link">
             <div class="thumb-box">
-              <img src="/css/background/images/bg.jpg" alt="">
+              <picture>
+                <source srcset="/mytest/img/img_768x768.jpg" media="(max-width: 720px)">
+                <img src="/mytest/img/img_1920x810.jpg" alt="">
+              </picture>
             </div>
             <div class="text-box">
               <p class="text-title">배너제목</p>
@@ -156,22 +217,11 @@
             </div>
           </a>
         </li>
-        <li class="mybanner__item">
-          <a href="" class="mybanner__link">
-            <div class="thumb-box">
-              <img src="/css/background/images/bg.jpg" alt="">
-            </div>
-            <div class="text-box">
-              <p class="text-title">배너제목</p>
-              <p class="text-desc">배너 설명 배너 설명</p>
-            </div>
-          </a>
-        </li>
-
 
       </ul>
     </div>
   </div>
+  <!-- //mybanner -->
 </body>
 
 </html>

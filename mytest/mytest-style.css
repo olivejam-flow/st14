@@ -1,0 +1,166 @@
+/*여기서 부터 단 배너 css */
+
+#container #contents > .section.mybanner-wrapper {
+   max-width: none;
+}
+@media (min-width: 1024px) {
+   #contents > .section.mybanner-wrapper {
+      max-width: none;
+      width: 100%;
+   }
+}
+
+.mybanner {
+   --banner-gap: 20px;
+   /* PC 갭 */
+   --banner-m-h-gap: 10px;
+   /* 모바일 수평 갭 */
+   --banner-m-v-gap: 10px;
+   /* 모바일 수직 갭 */
+   --banner-top-margin: 50px;
+   --banner-bottom-margin: 50px;
+   --banner-top-padding: 10px;
+   --banner-bottom-padding: 10px;
+   --banner-max-width: 1440px;
+   --col1: 100%;
+   --col2: 50%;
+   --col3: 33.333%;
+   --col4: 25%;
+   --col5: 20%;
+   background-color: #fafca6;
+}
+
+.mybanner {
+   margin-top: var(--banner-top-margin);
+   margin-bottom: var(--banner-bottom-margin);
+}
+
+.mybanner__inner {
+   max-width: var(--banner-max-width);
+   margin: 0 auto;
+   padding-top: var(--banner-top-padding);
+   padding-bottom: var(--banner-bottom-padding);
+}
+
+.mybanner__list {
+   display: flex;
+   gap: var(--banner-gap);
+   box-sizing: border-box;
+}
+
+.mybanner__item {
+   flex: 1;
+   box-sizing: border-box;
+
+   border: 1px solid #b3b3b3;
+   border-radius: 16px;
+   box-shadow: 0px 2px 5px rgba(184, 55, 38, 0.233);
+}
+
+.mybanner__list.grid1 .mybanner__item {
+   width: var(--col1);
+}
+
+.mybanner__list.grid2 .mybanner__item {
+   width: var(--col2);
+}
+
+.mybanner__list.grid3 .mybanner__item {
+   width: var(--col3);
+}
+
+.mybanner__list.grid4 .mybanner__item {
+   width: var(--col4);
+}
+
+.mybanner__list.grid5 .mybanner__item {
+   width: var(--col5);
+}
+
+.mybanner__link {
+   display: block;
+}
+
+.mybanner .thumb-box picture,
+.mybanner .thumb-box picture source,
+.mybanner .thumb-box picture img {
+   display: block;
+   width: 100%;
+}
+
+.mybanner .thumb-box img {
+   width: 100%;
+   border-radius: 16px 16px 0 0;
+}
+
+.mybanner .text-box {
+   padding-left: 12px;
+}
+
+.mybanner .text-box .text-title {
+   color: black;
+   font-size: 20px;
+   padding-bottom: var(--banner-bottom-padding);
+}
+
+.mybanner .text-box .text-desc {
+   color: grey;
+   margin-bottom: var(--banner-bottom-margin);
+}
+
+@media (max-width: 767px) {
+   .mybanner__list {
+      gap: var(--banner-m-h-gap) var(--banner-m-v-gap);
+      flex-wrap: wrap;
+   }
+
+   .mybanner .mybanner__item.m-col1 {
+      width: calc(var(--col1) - var(--banner-m-v-gap));
+   }
+
+   .m-col2 {
+      width: calc(var(--col2) - var(--banner-m-v-gap));
+   }
+
+   .m-col3 {
+      width: calc(var(--col3) - var(--banner-m-v-gap));
+   }
+
+   .m-col4 {
+      width: calc(var(--col4) - var(--banner-m-v-gap));
+   }
+
+   .m-col5 {
+      width: calc(var(--col5) - var(--banner-m-v-gap));
+   }
+
+   .mybanner__item {
+      flex: 1 0 auto;
+      box-shadow: 0px 2px 5px rgba(184, 55, 38, 0.233);
+   }
+   @media (max-width: 479px) {
+      .mybanner__item {
+         flex: 1 0 auto;
+         box-shadow: 0px 2px 5px rgba(38, 90, 31, 0.699);
+      }
+   }
+}
+
+/* //.mybanner 단 배너 스타일 끝 */
+
+/* footer bt_sns 시작 */
+#footer .inner .bt_wrap2 .bt_sns a svg {
+   height: 20px;
+}
+#footer .inner .bt_wrap2 .bt_sns a svg path {
+   fill: #ababab;
+   -webkit-transition: all 0.3s;
+   -moz-transition: all 0.3s;
+   -ms-transition: all 0.3s;
+   -o-transition: all 0.3s;
+   transition: all 0.3s;
+}
+#footer .inner .bt_wrap2 .bt_sns a:hover svg path {
+   fill: #111;
+}
+/* //footer bt_sns 끝 */
