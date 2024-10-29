@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>햄버거메뉴</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      margin: 50px;
+    }
+
+    .btn_megamenu {
+      background-color: #ccc;
+    }
+
+    /* 햄버거메뉴 */
+    .btn_megamenu {
+      display: flex;
+      justify-content: center;
+      height: 40px;
+      width: 24px;
+    }
+
+    .btn_megamenu a {
+      /* display: block; */
+      display: flex;
+      align-items: center;
+      height: 100%;
+    }
+
+    .btn_megamenu .icon.icoNav {
+      display: block;
+      width: 20px;
+      height: 2px;
+      color: #000;
+      background-color: currentColor;
+      box-shadow: 0 14px 0;
+      position: relative;
+      margin-top: -14px;
+    }
+
+    .btn_megamenu .icon.icoNav:before {
+      content: "";
+      display: block;
+      position: absolute;
+      left: 0;
+      top: 7px;
+      width: 20px;
+      height: 2px;
+      background-color: currentColor;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="btn_megamenu">
+    <a href="" class="eNavFold">
+      <i class="icon icoNav">
+
+      </i>
+    </a>
+  </div>
+</body>
+
+</html>
