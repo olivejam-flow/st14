@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>헤더연습</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    ul,
+    ol,
+    li {
+      list-style: none;
+    }
+
+    body {
+      background-color: #f0f;
+    }
+
+    #container {
+      background-color: #66f;
+      padding: 2rem;
+      position: relative;
+    }
+
+    /* 공통요소 1025이상*/
+    .display_pc_only {
+      display: block;
+    }
+
+    .tb_m_display {
+      display: none;
+    }
+
+    /* 
+    .tb_only {
+      display: none;
+    }
+
+    .m-only {
+      display: none;
+    } */
+
+    /* 헤더 */
+    #header {
+      /* position: fixed; */
+      position: relative;
+      z-index: 998;
+      width: 100%;
+      padding: 22px 0;
+      background-color: rgba(255, 255, 255, 0.5);
+    }
+
+    #header.fixed {
+      position: fixed;
+      left: 0;
+      top: 0;
+    }
+
+    #header .inner {
+      width: 92%;
+      background-color: #ff6;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+
+    #header .inner .toparea {
+      background-color: #ccc;
+    }
+
+    #header .fixed .inner .toparea {
+      display: none;
+    }
+
+    #header .inner .top_nav_box {
+      background-color: #996;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      /* 교차축의 기본값이 normal로 stretch로 정렬로 되는 것을 막아주기 위해 ㅁalign-items: flex-start로 설정 */
+    }
+
+    /* 
+    1. mypage
+      1-1 네비게이션 동일 선상에 위치
+      1-2 부모의 오른쪽 아래에 위치
+      position: absolute; (기준요소 지정)
+    2. m메뉴가 1024px이하에서만 보이게 설정해야함 (1025px이상해서는 보이지 않음)
+      -> @media(max-width:1024px){}
+    3.
+     */
+
+    #header .inner .top_nav_box .top_logo {
+      background-color: #3cc;
+    }
+
+    #header .fixed .inner .top_nav_box .top_logo {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    #header .inner .top_nav_box div[data-ez-module="menu-main/1/"] {
+      background-color: #cc3;
+    }
+
+    /* 
+    1 mypage
+        1-1 네비게이션 동일 선상 위치
+        1-2 부모의 오른쪽 아래 위치
+        position:absolute; -> 기준요소 지정
+    */
+    #header .inner .top_nav_box .top_mypage {
+      background-color: #c3c;
+      position: absolute;
+      right: 0;
+      bottom: 0;
+    }
+
+    /*
+   2. m메뉴가 1024px이하에서만 보이게 설정해야함 (1025px이상해서는 보이지 않음)
+      -> @media(max-width:1024px){}
+    */
+    #header .inner .top_nav_box .top_sidebar {
+      background-color: #33c;
+      display: none;
+    }
+
+    @media (max-width:1024px) {
+      .display_pc_only {
+        display: none;
+      }
+
+      .tb_m_display {
+        display: block;
+      }
+
+      /* .tb_only {
+        display: block;
+      }
+
+      .m-only {
+        display: none;
+      } */
+
+      #header .inner .top_nav_box .top_sidebar {
+        display: block;
+      }
+
+      #header .inner .top_nav_box .top_logo {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+      }
+
+    }
+
+    /* /max-width:1024; */
+
+    @media (max-width:767px) {
+      .display_pc_only {
+        display: none;
+      }
+
+      .tb_m_display {
+        display: block;
+      }
+
+      /* .tb_only {
+        display: none;
+      }
+
+      .m-only {
+        display: block;
+      } */
+    }
+  </style>
+</head>
+
+<body>
+  <header id="header" class="fixed">
+    <div class="inner">
+      <div class="toparea display_pc_only">
+        toparea
+      </div>
+      <div id="top_nav_box" class="top_nav_box">
+        <div class="top_logo">로고</div>
+        <!-- div[data-ez-module="menu-main/1/"] -->
+        <div data-ez-module="menu-main/1/" class="display_pc_only">
+          네비게이션
+          <!-- ul>li*4>a>{menu$} -->
+        </div>
+        <div class="top_mypage">mypage</div>
+        <div class="top_sidebar tb_m_display">M메뉴</div>
+      </div>
+    </div>
+    <!-- inner -->
+  </header>
+  <div id="container">
+    <div id="content">페이지 주 내용</div>
+  </div>
+</body>
+
+</html>
